@@ -7,7 +7,7 @@ class Releases
 
 	protected $_output = './releases';
 
-	protected $_versionFileName = 'versions';
+	protected $_versionFileName = 'releases';
 
 	/**
 	 * set release url

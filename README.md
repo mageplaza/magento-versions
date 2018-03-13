@@ -8,48 +8,74 @@ Helps Magento community get Magento 2 latest version number and list all version
 
 ## How to use
 
-File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/versions.json
+### All releases (JSON)
+
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/releases.json
 
 Json response: 
 
 ```
 {
-    "2.2": [
-        {
-            "v": "2.2.3",
-            "s": "stable",
-            "d": "2018-02-27"
-        },
-        {
-            "v": "2.2.0",
-            "s": "stable",
-            "d": "2017-09-26"
-        }
-    ],
-    "2.1": [
-        {
-            "v": "2.1.12",
-            "s": "stable",
-            "d": "2018-02-27"
-        },
-        {
-            "v": "2.1.5",
-            "s": "stable",
-            "d": "2017-02-21"
-        }
-    ],
-
+    "2.2.3": {
+        "v": "2.2.3",
+        "s": "stable",
+        "d": "2018-02-27"
+    },
+    "2.2.2": {
+        "v": "2.2.2",
+        "s": "stable",
+        "d": "2017-12-12"
+    },
+    "2.2.1": {
+        "v": "2.2.1",
+        "s": "stable",
+        "d": "2017-11-07"
+    }
 }
 ```
 
-### Latest version
+### All releases (XML)
+
+File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/releases.json
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<releases>
+   <r>
+      <v>2.2.3</v>
+      <s>stable</s>
+      <d>2018-02-27</d>
+   </r>
+   <r>
+      <v>2.2.2</v>
+      <s>stable</s>
+      <d>2017-12-12</d>
+   </r>
+</releases>
+```
+### Latest release
 
 File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.txt
-
-File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.json
-
-Example: 
 
 ```
 2.2.3
 ```
+
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.json
+
+```
+{
+    "v": "2.2.3",
+    "s": "stable",
+    "d": "2018-02-27"
+}
+```
+
+
+## Update frequently
+
+We update releases from `github.com/magento/magento2` **daily**.
+
+## Contribute
+
+You are welcome to contribute this project. Just create a pull request :)

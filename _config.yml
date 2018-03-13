@@ -1,9 +1,0 @@
-name: "Magento 2 version API"
-url: 
-theme: jekyll-theme-cayman
-encoding: "UTF-8"
-include: ["LICENSE.txt", "*.woff", "*.ttf", "*.json"]
-exclude: ["_site", lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec"]
-
-
-
