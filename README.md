@@ -8,7 +8,7 @@ Helps Magento community get Magento 2 latest version number and list all version
 
 ## How to use
 
-File: https://mageplaza.github.io/magento-versions/versions/versions.json
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/versions.json
 
 Json response: 
 
@@ -44,8 +44,9 @@ Json response:
 
 ### Latest version
 
-File: https://mageplaza.github.io/magento-versions/versions/versions.txt
-File: https://mageplaza.github.io/magento-versions/versions/versions.json
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.txt
+
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.json
 
 Example: 
 
