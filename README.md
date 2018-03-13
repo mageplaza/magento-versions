@@ -10,7 +10,7 @@ Helps Magento community get Magento 2 latest version number and list all version
 
 ### All releases (JSON)
 
-File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/releases.json
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/master/releases.json
 
 Json response: 
 
@@ -36,7 +36,7 @@ Json response:
 
 ### All releases (XML)
 
-File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/releases.json
+File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/master/releases.json
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -55,13 +55,13 @@ File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master
 ```
 ### Latest release
 
-File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.txt
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/master/latest.txt
 
 ```
 2.2.3
 ```
 
-File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/versions/latest.json
+File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/master/latest.json
 
 ```
 {
