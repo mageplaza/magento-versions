@@ -14,7 +14,7 @@ File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releas
 
 Json response: 
 
-```
+```json
 {
     "2.2.3": {
         "v": "2.2.3",
@@ -38,7 +38,7 @@ Json response:
 
 File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releases/releases.json
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <releases>
    <r>
@@ -63,7 +63,7 @@ File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releas
 
 File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releases/latest.json
 
-```
+```json
 {
     "v": "2.2.3",
     "s": "stable",
