@@ -53,23 +53,26 @@ class Releases
 		krsort($versions);
 		krsort($versionListMode);
 		//get latest version
-		$latest  = $this->getLatestVersion($versionListMode);
 		
 		//Save to files
 		$this->saveToJsonFile($versions, 'versions.json');
 		$this->saveToJsonFile($versionListMode, 'versionsList.json');
 		//save latest version
-		$this->saveToJsonFile([$latest], 'latest.json'); 
+		$this->saveToJsonFile($this->getLatestVersion($versionListMode), 'latest.json'); 
 		//save to txt file
-		$this->saveToFile($latest, 'latest.txt');
+		$this->saveToFile($this->getLatestVersion($versionListMode, 'txt'), 'latest.txt');
 		// $this->saveToFile($versions, 'xml');
 
 	}
 
-	public function getLatestVersion($versions){
+	public function getLatestVersion($versions, $type = 'array'){
 		$latest = reset($versions);
+		if($type == 'array'){
+			return $latest;
+		} else{
+			return $latest['v'];
 
-		return $latest['v'];
+		}
 	}
 
 	public function saveToJsonFile($data, $filePath){

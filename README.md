@@ -1,6 +1,12 @@
-Welcome
+# Magento 2 versions available API (JSON,XML)
 
-## Magento 2 versions
+In Magento 1, we can get list of available versions at `http://connect20.magentocommerce.com/community/Mage_All_Latest/releases.xml`. Magento 2 edition, there is nothing similar. However, there are Magento 2 releases on Github, but it's complex, includes prereleases / preview release, that why we create this simple tool to filter and format the JSON / XML file that may help Magento 2 development community.
+
+## Purpose
+
+Helps Magento community get Magento 2 latest version number and list all version number also.
+
+## How to use
 
 File: https://mageplaza.github.io/magento-versions/versions/versions.json
 
@@ -14,7 +20,6 @@ Json response:
             "s": "stable",
             "d": "2018-02-27"
         },
-	....
         {
             "v": "2.2.0",
             "s": "stable",
@@ -27,32 +32,20 @@ Json response:
             "s": "stable",
             "d": "2018-02-27"
         },
-	....
         {
             "v": "2.1.5",
             "s": "stable",
             "d": "2017-02-21"
         }
     ],
-    "2.0": [
-        {
-            "v": "2.0.18",
-            "s": "stable",
-            "d": "2018-02-27"
-        },
-   ....
-        {
-            "v": "2.0.13",
-            "s": "stable",
-            "d": "2017-02-21"
-        }
-    ]
+
 }
 ```
 
 ### Latest version
 
 File: https://mageplaza.github.io/magento-versions/versions/versions.txt
+File: https://mageplaza.github.io/magento-versions/versions/versions.json
 
 Example: 
 
