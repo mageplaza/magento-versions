@@ -34,30 +34,42 @@ class Releases
 		$json = $this->getContentByCRUL($this->getReleaseUrl());
 		$releases = json_decode($json, true);
 		$versions = [];
+		$versionListMode = [];
 		foreach ($releases as $_release) {
-			if($_release['prerelease'] == 1) continue;
-			$versions[$_release['target_commitish']][] = $_release['tag_name'];
+			if($_release['prerelease'] == 1) continue; //skip preview/prerelease
+
+			$versions[$_release['target_commitish']][] = [
+				'v'=> $_release['tag_name'],
+				's'=> 'stable',
+				'd'=> date("Y-m-d", strtotime($_release['published_at'])),
+			];
+			$versionListMode[$_release['tag_name']] = [
+				'v'=> $_release['tag_name'],
+				's'=> 'stable',
+				'd'=> date("Y-m-d", strtotime($_release['published_at'])),
+			];
 		}
 		//Sort major version
 		krsort($versions);
+		krsort($versionListMode);
 		//get latest version
-		$versions['latest']  = $this->getLatestVersion($versions);
+		$latest  = $this->getLatestVersion($versionListMode);
 		
 		//Save to files
 		$this->saveToJsonFile($versions, 'versions.json');
+		$this->saveToJsonFile($versionListMode, 'versionsList.json');
 		//save latest version
-		$this->saveToJsonFile([$versions['latest']], 'latest.json'); 
+		$this->saveToJsonFile([$latest], 'latest.json'); 
 		//save to txt file
-		$this->saveToFile($versions['latest'], 'latest.txt');
+		$this->saveToFile($latest, 'latest.txt');
 		// $this->saveToFile($versions, 'xml');
 
 	}
 
 	public function getLatestVersion($versions){
-		$major = reset($versions);
-		$latest = reset($major);
+		$latest = reset($versions);
 
-		return $latest;
+		return $latest['v'];
 	}
 
 	public function saveToJsonFile($data, $filePath){
