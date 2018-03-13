@@ -25,9 +25,9 @@ class Releases
 		return $this->_output;
 	}
 
-	public function getVersionPath($type = 'json'){
+	public function getVersionPath($file){
 		//versions.json/xml/txt
-		return $this->getOutput() . '/' . $this->_versionFileName . '.' . $type;
+		return $this->getOutput() . '/' . $file;
 	}
 
 	public function updateVersions(){
@@ -44,8 +44,11 @@ class Releases
 		$versions['latest']  = $this->getLatestVersion($versions);
 		
 		//Save to files
-		$this->saveToFile($versions, 'json');
-		$this->saveToFile($versions, 'txt');
+		$this->saveToJsonFile($versions, 'versions.json');
+		//save latest version
+		$this->saveToJsonFile([$versions['latest']], 'latest.json'); 
+		//save to txt file
+		$this->saveToFile($versions['latest'], 'latest.txt');
 		// $this->saveToFile($versions, 'xml');
 
 	}
@@ -57,31 +60,22 @@ class Releases
 		return $latest;
 	}
 
-	public function saveToFile($versions, $fileType = 'json'){
-		$encodeFile = '';
-		switch ($fileType) {
-			case 'json':
-				$encodeFile = json_encode($versions, JSON_PRETTY_PRINT);
-				break;
-			case 'txt':
-				$encodeFile = isset($versions['latest']) ? $versions['latest'] : null;
-			break;
-
-			case 'xml':
-				// $xml = new SimpleXMLElement('<root/>');
-				// array_walk_recursive($versions, array ($xml, 'addChild'));
-				// $encodeFile = $xml->asXML();
-			break;
-			default:
-				# code...
-				break;
-		}
+	public function saveToJsonFile($data, $filePath){
+		$encodeFile = json_encode($data, JSON_PRETTY_PRINT);
 		try {
-			file_put_contents($this->getVersionPath($fileType), $encodeFile);
+			file_put_contents($this->getVersionPath($filePath), $encodeFile);
 		} catch (Exception $e) {
 			
 		}
 
+	}
+
+	public function saveToFile($data, $filePath){
+		try {
+			file_put_contents($this->getVersionPath($filePath), $data);
+		} catch (Exception $e) {
+			
+		}
 	}
 
     public function getContentByCRUL($url) {
