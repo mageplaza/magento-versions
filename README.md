@@ -1,4 +1,4 @@
-# Magento 2 versions available API (JSON,XML)
+# Magento 2 versions number available (JSON,XML)
 
 In Magento 1, we can get list of available versions at `http://connect20.magentocommerce.com/community/Mage_All_Latest/releases.xml`. Magento 2 edition, there is nothing similar. However, there are Magento 2 releases on Github, but it's complex, includes prereleases / preview release, that why we create this simple tool to filter and format the JSON / XML file that may help Magento 2 development community.
 
