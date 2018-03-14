@@ -36,7 +36,7 @@ Json response:
 
 ### All releases (XML)
 
-File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releases/releases.json
+File Source: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releases/releases.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,7 +74,7 @@ File: https://raw.githubusercontent.com/mageplaza/magento-versions/master/releas
 
 ## Update frequently
 
-We update releases from `github.com/magento/magento2` **daily**.
+We update new releases from `https://github.com/magento/magento2` **daily**.
 
 ## Contribute
 
